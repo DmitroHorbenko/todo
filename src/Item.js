@@ -5,6 +5,4 @@ export default function Item (props) {
         {props.children}
         <button onClick={props.deleteEvent}> Del</button>
     </li>
-
 }
-

@@ -1,34 +1,26 @@
 import React, {Component} from 'react'
 import './App.css'
-// import users from './user.json'
 import Item from './Item'
 import TodoForm from './TodoForm'
 import Header from './Header'
 
 class App extends Component {
-    state = {
-        newTitle: 'Бумеранг не запущен',
-        idItem: 'тест',
-        todoList: [{
-            "userId": 1,
-            "id": 1,
-            "title": "delectus aut autem",
-            "completed": false
-        },
-            {
-                "userId": 1,
-                "id": 2,
-                "title": "quis ut nam facilis et officia qui",
-                "completed": false
-            },
-            {
-                "userId": 1,
-                "id": 3,
-                "title": "fugiat veniam minus",
-                "completed": false
-            }]
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            todoList: []
+        };
+            [1,2,3,4,5,6,7,8,9,10].map((item) => this.getTodo(item));
     }
 
+    getTodo(id) {
+        const url = `https://jsonplaceholder.typicode.com/todos`
+        return fetch(url+'/'+id)
+            .then((res)=> res.json())
+            .then((res)=> (
+                this.setState({todoList: [...this.state.todoList, res]})))
+    }
 
     addTodo = (value) => {
         let newelement = {
@@ -40,7 +32,7 @@ class App extends Component {
         this.setState({ newTitle: value })
         if (value.length) {
             newelement.title = value
-            newelement.id = this.state.todoList.length + 100
+            newelement.id = Math.floor(Math.random() * 10001)
             this.setState({
                 todoList: [...this.state.todoList, newelement]
             })
@@ -53,24 +45,24 @@ class App extends Component {
         this.setState({todoList: todoList})
     }
 
-  render () {
-    return (
-      <div className="App">
-        <Header users={this.state.todoList}/>
-        <TodoForm addTodo={this.addTodo}/>
-          <p>{this.state.newItem} </p>
-        <ul>
-            {this.state.todoList
-                .map((user, id) =>
-                        <Item key={user.id}
-                              deleteEvent={this.delTodo.bind(this, id)}>
-                            {user.title}
-                        </Item>
-                    )}
-        </ul>
-      </div>
-    );
-  }
+    render () {
+        return (
+            <div className="App">
+                <Header users={this.state.todoList}/>
+                <TodoForm addTodo={this.addTodo}/>
+                <p>{this.state.newItem} </p>
+                <ul>
+                    {this.state.todoList
+                        .map((user, id) =>
+                            <Item key={user.id}
+                                  deleteEvent={this.delTodo.bind(this, id)}>
+                                {user.title}
+                            </Item>
+                        )}
+                </ul>
+            </div>
+        );
+    }
 }
 
 export default App;
