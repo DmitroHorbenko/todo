@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da31a018-c336-4974-bbe4-9c3599fa9de4" name="Default Changelist" comment="fetch todo's from jsonplaseholder">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Item.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -217,12 +212,12 @@
       <workItem from="1563440386758" duration="17474000" />
       <workItem from="1563526937802" duration="5465000" />
       <workItem from="1563534239442" duration="61000" />
-      <workItem from="1563534339613" duration="3136000" />
+      <workItem from="1563534339613" duration="3697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85554000" />
+    <option name="totallyTimeSpent" value="86115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
