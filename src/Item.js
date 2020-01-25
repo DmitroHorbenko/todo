@@ -1,8 +1,10 @@
 import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 export default function Item (props) {
     return <li>
         {props.children}
-        <button onClick={props.deleteEvent}> Del</button>
+        <IconButton aria-label="delete" onClick={props.deleteEvent}><DeleteIcon /></IconButton>
     </li>
 }

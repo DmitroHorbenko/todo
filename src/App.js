@@ -3,7 +3,9 @@ import './App.css'
 import Item from './Item'
 import TodoForm from './TodoForm'
 import Header from './Header'
+import Container from "@material-ui/core/Container";
 
+// checkout
 class App extends Component {
     constructor(props) {
         super(props);
@@ -48,7 +50,10 @@ class App extends Component {
     render () {
         return (
             <div className="App">
-                <Header users={this.state.todoList}/>
+                <Container color="#111111">
+                    <Header users={this.state.todoList}/>
+                </Container>
+
                 <TodoForm addTodo={this.addTodo}/>
                 <p>{this.state.newItem} </p>
                 <ul>
